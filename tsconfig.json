@@ -1,4 +1,28 @@
 {
-  "compilerOptions": {},
-  "extends": "expo/tsconfig.base"
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",  // ou "react-jsx" para React 17 e superior
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+
+  "extends": "expo/tsconfig.base",
+
+  "include": [
+    "src/**/*",
+    "typings/**/*",
+    "node_modules/@react-native-async-storage/async-storage/**/*",
+    ".storybook/**/*",
+    "babel.config.ts",
+    "globals.d.ts"  // Inclua o caminho para o arquivo de declaração global
+  ],
+
+  "exclude": ["node_modules"]
 }
